@@ -28,4 +28,4 @@ class IsChefOrReadOnly(permissions.BasePermission):
             request.method in permissions.SAFE_METHODS
             or obj.chef == request.user
             or request.user.is_staff
-        ) 
+        )

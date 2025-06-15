@@ -7,6 +7,7 @@ class IsAuthorOrReadOnly(permissions.BasePermission):
     Если пользователь является администратором
     или владельцем записи, то возможны остальные методы.
     """
+
     def has_permission(self, request, view):
         return (
             request.method in permissions.SAFE_METHODS
@@ -26,6 +27,7 @@ class IsCurrentUserOrAdminOrReadOnly(permissions.BasePermission):
     Если пользователь является администратором
     или пользователем, то возможны остальные методы.
     """
+
     def has_object_permission(self, request, view, obj):
         if request.method in permissions.SAFE_METHODS:
             return True

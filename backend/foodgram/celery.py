@@ -6,4 +6,4 @@ os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'foodgram.settings')
 
 app = Celery('foodgram')
 app.config_from_object('django.conf:settings', namespace='CELERY')
-app.autodiscover_tasks() 
+app.autodiscover_tasks()

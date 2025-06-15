@@ -16,4 +16,4 @@ def generate_shopping_list(ingredients):
     response['Content-Disposition'] = (
         'attachment; filename="shopping_list.txt"'
     )
-    return response 
+    return response

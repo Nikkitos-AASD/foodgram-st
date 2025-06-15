@@ -51,9 +51,21 @@ class Ingredient(models.Model):
     name = models.CharField('Ingredient name', max_length=100)
     measurement = models.CharField('Measurement unit', max_length=50)
     calories = models.PositiveIntegerField('Calories per 100g', default=0)
-    protein = models.DecimalField('Protein per 100g', max_digits=5, decimal_places=2, default=0)
-    fat = models.DecimalField('Fat per 100g', max_digits=5, decimal_places=2, default=0)
-    carbs = models.DecimalField('Carbs per 100g', max_digits=5, decimal_places=2, default=0)
+    protein = models.DecimalField(
+        'Protein per 100g',
+        max_digits=5,
+        decimal_places=2,
+        default=0)
+    fat = models.DecimalField(
+        'Fat per 100g',
+        max_digits=5,
+        decimal_places=2,
+        default=0)
+    carbs = models.DecimalField(
+        'Carbs per 100g',
+        max_digits=5,
+        decimal_places=2,
+        default=0)
 
     class Meta:
         verbose_name = 'Ingredient'
