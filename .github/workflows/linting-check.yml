@@ -1,0 +1,33 @@
+name: Code Style Check
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  style_linting:
+    name: Static Analysis (flake8)
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Получить проект
+        uses: actions/checkout@v3
+
+      - name: Установить Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: Установить зависимости
+        run: |
+          pip install flake8
+
+      - name: Проверка стиля с flake8
+        run: |
+          flake8 backend --exclude=migrations \
+                         --max-line-length=120 \
+                         --ignore=E128,E501,W503
